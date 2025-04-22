@@ -1,0 +1,69 @@
+:root {
+  --primary-blue: #2563eb;
+  --text-dark: #1f2937;
+  --bg-white: #ffffff;
+}
+
+.navbar {
+  background: var(--bg-white);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 0.75rem 0;
+}
+.navbar .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+.navbar-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+.navbar-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-blue);
+}
+.navbar-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+.navbar-links li {
+  margin-right: 1.5rem;
+}
+.navbar-links a {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 500;
+}
+.navbar-links a:hover {
+  color: var(--primary-blue);
+}
+.navbar-links select {
+  padding: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  font-family: inherit;
+}
+.navbar-social {
+  display: flex;
+  gap: 0.75rem;
+}
+.navbar-social svg {
+  color: var(--text-dark);
+  cursor: pointer;
+}
+.navbar-social svg:hover {
+  color: var(--primary-blue);
+}
