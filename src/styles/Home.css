@@ -8,8 +8,9 @@
 
 .home {
   font-family: var(--font-sans);
-  color: var(--text-dark);
   background-color: var(--bg-white);
+  /* push down below fixed navbar (~56px) */
+  padding-top: 56px;
 }
 
 /* Hero */
@@ -31,11 +32,12 @@
   padding: 2rem 1rem;
   max-width: 600px;
   margin: 0 auto;
+  /* force white text */
+  color: #ffffff;
 }
 .hero-title {
   font-family: 'Poppins', sans-serif;
   font-size: clamp(2rem, 5vw, 3rem);
-  color: var(--primary-blue);
   margin-bottom: 1rem;
 }
 .hero-subtitle {
@@ -111,32 +113,4 @@
   .services-grid {
     grid-template-columns: 1fr;
   }
-}
-
-/* Footer */
-.footer {
-  background: var(--bg-white);
-  border-top: 1px solid #e5e7eb;
-  padding: 1.5rem 1rem;
-}
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-.footer-social {
-  display: flex;
-  gap: 1rem;
-}
-.footer-social svg {
-  color: var(--text-dark);
-  cursor: pointer;
-  transition: color 0.2s;
-}
-.footer-social svg:hover {
-  color: var(--accent-blue);
 }

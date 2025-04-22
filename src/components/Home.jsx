@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/Home.css';
+import studentImg from '../assets/students.jpeg';
 
 export default function Home() {
   const services = [
@@ -19,12 +20,15 @@ export default function Home() {
 
   return (
     <main className="home">
-      <section className="hero" style={{ backgroundImage: "url('/images/hero.jpg')" }}>
+      <section
+        className="hero"
+        style={{ backgroundImage: `url(${studentImg})` }}
+      >
         <div className="hero-overlay"></div>
         <div className="hero-content">
-          <h1 className="hero-title">Добро пожаловать в EdUS</h1>
+          <h1 className="hero-title">Поступление в университеты США</h1>
           <p className="hero-subtitle">
-            Помогаем студентам с обучением за рубежом и оформлением туристических виз.
+          Полное сопровождение от подбора вузов до получения визы
           </p>
           <a href="#services" className="hero-btn">Узнать больше</a>
         </div>
@@ -33,9 +37,7 @@ export default function Home() {
       <section id="about" className="about">
         <h2 className="section-title">О нас</h2>
         <p className="section-text">
-          EdUS — команда профессионалов, сопровождающая вас на каждом этапе поступления<br/>
-          в зарубежные вузы и оформления туристических виз, чтобы ваше образование и<br/>
-          путешествия были максимально комфортными.
+        Мы помогаем осуществить мечты об учёбе в США. Предоставляем индивидуальную поддержку и экспертные советы по поступлению в ведущие университеты и колледжи.
         </p>
       </section>
 
@@ -51,5 +53,5 @@ export default function Home() {
         </div>
       </section>
     </main>
-  );
+);
 }

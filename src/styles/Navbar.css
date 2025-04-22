@@ -1,14 +1,17 @@
 :root {
   --primary-blue: #2563eb;
-  --edus-blue: #1e40af;    /* darker for the EdUS title */
+  --edus-blue: #1e40af;
   --text-dark: #1f2937;
   --bg-white: #ffffff;
 }
 
 .navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
   background: var(--bg-white);
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  position: relative;
+  z-index: 1000;
 }
 .navbar-container {
   max-width: 1200px;
@@ -84,17 +87,16 @@
   padding: 0.25rem 0.5rem;
   border: 1px solid #ccc;
   border-radius: 0.25rem;
-  background: white;
+  background: var(--bg-white);
   font-family: inherit;
   cursor: pointer;
   color: var(--text-dark);
 }
-/* Option colors */
 .navbar-lang option {
   color: var(--text-dark);
 }
 
-/* Responsive */
+/* Mobile styles */
 @media (max-width: 768px) {
   .navbar-toggle {
     display: block;

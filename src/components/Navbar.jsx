@@ -22,7 +22,7 @@ export default function Navbar() {
           <span className="navbar-title">EdUS</span>
         </div>
 
-        {/* Mobile Toggle */}
+        {/* Mobile toggle */}
         <button
           className="navbar-toggle"
           onClick={() => setOpen(!open)}
@@ -67,5 +67,5 @@ export default function Navbar() {
         </div>
       </div>
     </nav>
-  );
+);
 }

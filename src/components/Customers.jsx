@@ -6,9 +6,9 @@ import cust3 from '../assets/Customer3.jpeg';
 
 export default function Customers() {
   const reviews = [
-    { name: 'Alice Johnson', image: cust1, text: 'Спасибо EdUS за отличную помощь в оформлении визы в США! Сервис на высшем уровне.' },
-    { name: 'Michael Smith',  image: cust2, text: 'EdUS сделали процесс получения визы простым и понятным. Очень благодарен!' },
-    { name: 'Samantha Lee',  image: cust3, text: 'Потрясающая поддержка от EdUS — профессионально и быстро.' }
+    { name: 'Customer 1', image: cust1, text: 'Спасибо EdUS за отличную помощь в оформлении визы в США! Сервис на высшем уровне.' },
+    { name: 'Customer 2',  image: cust2, text: 'EdUS сделали процесс получения визы простым и понятным. Очень благодарен!' },
+    { name: 'Customer 3',  image: cust3, text: 'Потрясающая поддержка от EdUS — профессионально и быстро.' }
   ];
 
   return (
