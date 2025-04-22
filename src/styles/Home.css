@@ -9,22 +9,23 @@
 .home {
   font-family: var(--font-sans);
   background-color: var(--bg-white);
-  /* push down below fixed navbar (~56px) */
-  padding-top: 56px;
+  padding-top: 56px; /* below fixed navbar */
 }
 
-/* Hero */
+/* ----- Hero ----- */
 .hero {
   position: relative;
   background-size: cover;
   background-position: center;
   height: 90vh;
 }
+
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.3);
 }
+
 .hero-content {
   position: relative;
   z-index: 2;
@@ -32,18 +33,21 @@
   padding: 2rem 1rem;
   max-width: 600px;
   margin: 0 auto;
-  /* force white text */
-  color: #ffffff;
+  color: #fff;
 }
+
 .hero-title {
   font-family: 'Poppins', sans-serif;
   font-size: clamp(2rem, 5vw, 3rem);
   margin-bottom: 1rem;
 }
+
 .hero-subtitle {
   font-size: clamp(1rem, 3vw, 1.25rem);
   margin-bottom: 1.5rem;
 }
+
+/* Hero button */
 .hero-btn {
   display: inline-block;
   background: var(--primary-blue);
@@ -58,38 +62,72 @@
   background: var(--accent-blue);
 }
 
-
+/* Social icons container */
 .hero-social {
-  position: relative;      /* so we can shift it down */
-  top: 2rem;               /* move icons lower */
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
+  gap: 2rem;
+}
+
+/* Rounded white buttons with circle-hover */
+.hero-social-link {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
   align-items: center;
-  gap: 3rem;               /* more space between icons */
-  margin-top: 0;           /* override any previous margin */
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.3s;
 }
 
-.hero-social a {
-  color: #fff;             /* solid white, no transparency */
-  opacity: 1;              /* ensure fully opaque */
-  transition: transform 0.2s;
+/* Ripple/scale circle on hover */
+.hero-social-link::after {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.4s ease;
 }
 
-.hero-social a:hover {
+.hero-social-link:hover {
   transform: scale(1.1);
 }
 
-/* About */
+.hero-social-link:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Brand colors for the icons themselves */
+.hero-social-link.instagram svg {
+  color: #E4405F;
+}
+
+.hero-social-link.whatsapp svg {
+  color: #25D366;
+}
+
+/* ----- About ----- */
 .about {
   padding: 4rem 1rem;
   text-align: center;
 }
+
 .section-title {
   font-family: 'Poppins', sans-serif;
   font-size: clamp(1.5rem, 4vw, 2.25rem);
   color: var(--primary-blue);
   margin-bottom: 1rem;
 }
+
 .section-text {
   font-size: 1rem;
   line-height: 1.6;
@@ -97,15 +135,17 @@
   margin: 0 auto;
 }
 
-/* Services */
+/* ----- Services ----- */
 .services {
   padding: 4rem 1rem;
 }
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
 }
+
 .services-card {
   background: var(--bg-white);
   padding: 1.5rem;
@@ -113,20 +153,23 @@
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 .services-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
+
 .services-card-title {
   font-size: 1.25rem;
   color: var(--primary-blue);
   margin-bottom: 0.5rem;
 }
+
 .services-card-text {
   font-size: 1rem;
 }
 
-/* Mobile tweaks */
+/* ----- Mobile tweaks ----- */
 @media (max-width: 768px) {
   .hero {
     height: 60vh;

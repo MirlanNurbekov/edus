@@ -45,20 +45,22 @@ export default function Home() {
           {/* Здесь — наши соцсети: Instagram и WhatsApp */}
           <div className="hero-social">
             <a
+              className="hero-social-link instagram"
               href="https://www.instagram.com/edus.kg"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="EdUS в Instagram"
             >
-              <FaInstagram size={64} />
+              <FaInstagram size={32} />
             </a>
             <a
+              className="hero-social-link whatsapp"
               href="https://wa.me/996507221215"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Связаться в WhatsApp"
             >
-              <FaWhatsapp size={64} />
+              <FaWhatsapp size={32} />
             </a>
           </div>
         </div>
@@ -85,5 +87,5 @@ export default function Home() {
         </div>
       </section>
     </main>
-  );
+);
 }

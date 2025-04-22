@@ -1,4 +1,6 @@
+// src/components/Navbar.jsx
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/Navbar.css';
 import {
   FaInstagram,
@@ -17,9 +19,9 @@ export default function Navbar() {
       <div className="navbar-container">
         {/* Brand as Home link */}
         <div className="navbar-brand">
-          <a href="/" aria-label="Go to home">
+          <Link to="/" aria-label="Go to home">
             <img src={logo} alt="EdUS Logo" className="navbar-logo" />
-          </a>
+          </Link>
         </div>
 
         {/* Mobile toggle */}
@@ -33,10 +35,10 @@ export default function Navbar() {
 
         {/* Links + Socials + Language */}
         <div className={`navbar-links${open ? ' show' : ''}`}>
-          <a href="#">Главная</a>
-          <a href="#about">О нас</a>
-          <a href="#services">Наши услуги</a>
-          <a href="#customers">Наши клиенты</a>
+          <Link to="/" onClick={() => setOpen(false)}>Главная</Link>
+          <Link to="/about-us" onClick={() => setOpen(false)}>О нас</Link>
+          <Link to="/our-services" onClick={() => setOpen(false)}>Наши услуги</Link>
+          <Link to="/customers" onClick={() => setOpen(false)}>Наши клиенты</Link>
 
           {/* Divider */}
           <div className="navbar-divider" />
