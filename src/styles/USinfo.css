@@ -1,0 +1,29 @@
+.usinfo {
+    padding: 4rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  .usinfo-content h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .usinfo-content p {
+    margin-bottom: 1.5rem;
+  }
+  
+  .usinfo-content ul {
+    margin-bottom: 2rem;
+    padding-left: 1.2rem;
+  }
+  
+  .btn-secondary {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #6c757d;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+  }
+  

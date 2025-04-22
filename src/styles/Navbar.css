@@ -28,8 +28,8 @@
   align-items: center;
 }
 .navbar-logo {
-  width: 43.2px;   /* 36px * 1.2 */
-  height: 43.2px;
+  width: 150px;   /* 36px * 1.2 */
+  height: 50px;
   border-radius: 50%;
   margin-right: 0.5rem;
 }
@@ -116,4 +116,12 @@
   .navbar-links.show {
     display: flex;
   }
+}
+
+/* divider before social icons */
+.navbar-divider {
+  width: 1px;
+  background-color: rgba(73, 73, 73, 0.5); /* adjust color/opacity as needed */
+  height: 24px; /* match icon height */
+  margin: 0 1rem;  /* space on both sides */
 }

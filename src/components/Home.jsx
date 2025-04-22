@@ -1,4 +1,7 @@
+// src/components/Home.jsx
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import '../styles/Home.css';
 import studentImg from '../assets/students.jpeg';
 
@@ -6,15 +9,18 @@ export default function Home() {
   const services = [
     {
       title: 'Консультация по визам',
-      text: 'Экспертная помощь в сборе документов и заполнении анкет.'
+      text: 'Экспертная помощь в сборе документов и заполнении анкет.',
+      path: '/consultation'
     },
     {
       title: 'Поступление в ВУЗ',
-      text: 'Подбор университетов, помощь в оформлении и сопровождение.'
+      text: 'Подбор университетов, помощь в оформлении и сопровождение.',
+      path: '/enrollment'
     },
     {
       title: 'Подготовка к интервью',
-      text: 'Индивидуальная подготовка к интервью в Посольстве США'
+      text: 'Индивидуальная подготовка к интервью в Посольстве США',
+      path: '/preparation'
     }
   ];
 
@@ -26,32 +32,58 @@ export default function Home() {
       >
         <div className="hero-overlay"></div>
         <div className="hero-content">
-          <h1 className="hero-title">Поступление в университеты США</h1>
+          <h1 className="hero-title">Добро пожаловать в EdUS</h1>
           <p className="hero-subtitle">
-          Полное сопровождение от подбора вузов до получения визы
+            Помогаем студентам с обучением за рубежом и оформлением туристических виз.
           </p>
-          <a href="#services" className="hero-btn">Узнать больше</a>
+
+          {/* Навигация на страницу «Узнать больше» */}
+          <Link to="/usinfo" className="hero-btn">
+            Узнать больше
+          </Link>
+
+          {/* Здесь — наши соцсети: Instagram и WhatsApp */}
+          <div className="hero-social">
+            <a
+              href="https://www.instagram.com/edus.kg"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="EdUS в Instagram"
+            >
+              <FaInstagram size={64} />
+            </a>
+            <a
+              href="https://wa.me/996507221215"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Связаться в WhatsApp"
+            >
+              <FaWhatsapp size={64} />
+            </a>
+          </div>
         </div>
       </section>
 
       <section id="about" className="about">
         <h2 className="section-title">О нас</h2>
         <p className="section-text">
-        Мы помогаем осуществить мечты об учёбе в США. Предоставляем индивидуальную поддержку и экспертные советы по поступлению в ведущие университеты и колледжи.
+          EdUS — команда профессионалов, сопровождающая вас на каждом этапе поступления<br/>
+          в зарубежные вузы и оформления туристических виз, чтобы ваше образование и<br/>
+          путешествия были максимально комфортными.
         </p>
       </section>
 
       <section id="services" className="services">
         <h2 className="section-title">Наши услуги</h2>
         <div className="services-grid">
-          {services.map(item => (
-            <div key={item.title} className="services-card">
-              <h3 className="services-card-title">{item.title}</h3>
-              <p className="services-card-text">{item.text}</p>
-            </div>
+          {services.map(({ title, text, path }) => (
+            <Link key={title} to={path} className="services-card">
+              <h3 className="services-card-title">{title}</h3>
+              <p className="services-card-text">{text}</p>
+            </Link>
           ))}
         </div>
       </section>
     </main>
-);
+  );
 }

@@ -1,0 +1,16 @@
+.page-container {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 0 1rem;
+    font-family: 'Inter', sans-serif;
+    color: #1f2937;
+  }
+  .page-container h1 {
+    font-family: 'Poppins', sans-serif;
+    color: #2563eb;
+    margin-bottom: 1rem;
+  }
+  .page-container p {
+    line-height: 1.6;
+  }
+  

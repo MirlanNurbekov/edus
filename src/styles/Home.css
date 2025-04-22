@@ -58,6 +58,27 @@
   background: var(--accent-blue);
 }
 
+
+.hero-social {
+  position: relative;      /* so we can shift it down */
+  top: 2rem;               /* move icons lower */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;               /* more space between icons */
+  margin-top: 0;           /* override any previous margin */
+}
+
+.hero-social a {
+  color: #fff;             /* solid white, no transparency */
+  opacity: 1;              /* ensure fully opaque */
+  transition: transform 0.2s;
+}
+
+.hero-social a:hover {
+  transform: scale(1.1);
+}
+
 /* About */
 .about {
   padding: 4rem 1rem;

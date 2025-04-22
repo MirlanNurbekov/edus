@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import '../styles/Navbar.css';
 import {
-  FaFacebook,
-  FaTwitter,
   FaInstagram,
-  FaLinkedin,
+  FaTiktok,
+  FaYoutube,
   FaBars,
   FaTimes
 } from 'react-icons/fa';
-import logo from '../assets/logo.jpg';
+import logo from '../assets/NavBarLogo.jpg';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -16,10 +15,11 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        {/* Brand */}
+        {/* Brand as Home link */}
         <div className="navbar-brand">
-          <img src={logo} alt="EdUS Logo" className="navbar-logo" />
-          <span className="navbar-title">EdUS</span>
+          <a href="/" aria-label="Go to home">
+            <img src={logo} alt="EdUS Logo" className="navbar-logo" />
+          </a>
         </div>
 
         {/* Mobile toggle */}
@@ -38,23 +38,34 @@ export default function Navbar() {
           <a href="#services">Наши услуги</a>
           <a href="#customers">Наши клиенты</a>
 
+          {/* Divider */}
+          <div className="navbar-divider" />
+
           {/* Social icons */}
           <div className="navbar-social">
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-              <FaFacebook />
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-              <FaTwitter />
-            </a>
             <a
-              href="https://www.instagram.com/edus.kg?igsh=amwyZzF6ZnpweGM0"
+              href="https://www.tiktok.com/@edus.kg"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="EdUS on TikTok"
+            >
+              <FaTiktok />
+            </a>
+            <a
+              href="https://www.youtube.com/@edus-d6q"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="EdUS on YouTube"
+            >
+              <FaYoutube />
+            </a>
+            <a
+              href="https://www.instagram.com/edus.kg"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="EdUS on Instagram"
             >
               <FaInstagram />
-            </a>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-              <FaLinkedin />
             </a>
           </div>
 
@@ -67,5 +78,5 @@ export default function Navbar() {
         </div>
       </div>
     </nav>
-);
+  );
 }
