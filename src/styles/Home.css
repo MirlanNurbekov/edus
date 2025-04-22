@@ -1,0 +1,103 @@
+/* src/styles/Home.css */
+
+/* Root variables for consistent theming */
+:root {
+    --primary-blue: #2563eb;
+    --accent-blue: #3b82f6;
+    --text-dark: #1f2937;
+    --bg-white: #ffffff;
+    --font-sans: 'Inter', sans-serif;
+  }
+  
+  /* Global body styles */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-sans);
+    color: var(--text-dark);
+    background-color: var(--bg-white);
+  }
+  
+  /* Navbar overrides */
+  nav {
+    background-color: var(--bg-white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  nav a {
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  nav a:hover {
+    color: var(--primary-blue);
+  }
+  nav select {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+  }
+  
+  /* Hero section tweaks */
+  section[style*="hero.jpg"] {
+    position: relative;
+  }
+  section[style*="hero.jpg"] .container > div {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 0.5rem;
+  }
+  section[style*="hero.jpg"] h1 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary-blue);
+  }
+  section[style*="hero.jpg"] p {
+    color: var(--text-dark);
+  }
+  
+  /* About & Services sections */
+  #about,
+  #services {
+    padding: 4rem 2rem;
+  }
+  #about h2,
+  #services h2 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+  }
+  #services .grid > div {
+    background-color: var(--bg-white);
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+  #services .grid > div:hover {
+    transform: translateY(-4px);
+  }
+  #services .grid h3 {
+    color: var(--primary-blue);
+  }
+  
+  /* Footer styling */
+  footer {
+    background-color: var(--bg-white);
+    border-top: 1px solid #e5e7eb;
+    padding: 1.5rem 2rem;
+  }
+  footer a {
+    color: var(--text-dark);
+    transition: color 0.2s;
+  }
+  footer a:hover {
+    color: var(--accent-blue);
+  }
+  footer div:first-child {
+    font-size: 0.9rem;
+  }
+  
+  /* Headings and text */
+  h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+  }
+  p {
+    line-height: 1.6;
+  }
+  
