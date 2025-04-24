@@ -1,16 +1,21 @@
 /* src/styles/Home.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 :root {
-  --primary-blue: #2563eb;
-  --accent-blue: #3b82f6;
-  --text-dark: #1f2937;
-  --bg-white: #ffffff;
-  --font-sans: 'Inter', sans-serif;
+  --primary-blue: #0F1954;
+  --btn-blue:     #1e3a8a;
+  --btn-hover:    #3B82F6;
+  --text-white:   #ffffff;
+  --font-sans:    'Poppins', sans-serif;
+  --link-blue:    #9fc5e8;
 }
+
 
 .home {
   font-family: var(--font-sans);
-  background-color: var(--bg-white);
-  padding-top: 56px; /* below fixed navbar */
+  background: #0F1954;
+  padding-top: 56px;
+  color: var(--text-white);
 }
 
 /* ----- Hero ----- */
@@ -18,15 +23,13 @@
   position: relative;
   background-size: cover;
   background-position: center;
-  height: 90vh;
+  height: 95vh;
 }
-
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0,0,0,0.3);
 }
-
 .hero-content {
   position: relative;
   z-index: 2;
@@ -34,25 +37,21 @@
   padding: 2rem 1rem;
   max-width: 600px;
   margin: 0 auto;
-  color: #fff;
 }
-
 .hero-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  font-size: clamp(2rem,5vw,3rem);
   margin-bottom: 1rem;
 }
-
 .hero-subtitle {
-  font-size: clamp(1rem, 3vw, 1.25rem);
+  font-weight: 400;
+  font-size: clamp(1rem,3vw,1.25rem);
   margin-bottom: 1.5rem;
 }
-
-/* Hero button */
 .hero-btn {
   display: inline-block;
-  background: var(--primary-blue);
-  color: #fff;
+  background: var(--btn-blue);
+  color: var(--text-white);
   padding: 0.75rem 1.5rem;
   border-radius: 9999px;
   font-weight: 600;
@@ -60,69 +59,55 @@
   transition: background 0.2s ease;
 }
 .hero-btn:hover {
-  background: var(--accent-blue);
+  background: var(--btn-hover);
 }
 
-/* Social icons container */
+/* Social icons */
 .hero-social {
-  margin-top: 2rem;
+  margin-top: 1rem;
   display: flex;
   justify-content: center;
   gap: 2rem;
 }
-
-/* Rounded white buttons with circle-hover */
 .hero-social-link {
   position: relative;
   width: 64px;
   height: 64px;
-  background: #fff;
+  background: var(--text-white);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
   transition: transform 0.3s;
 }
-
-/* Ripple/scale circle on hover */
 .hero-social-link::after {
   content: '';
   position: absolute;
   width: 200%;
   height: 200%;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0,0,0,0.1);
   border-radius: 50%;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0);
+  transform: translate(-50%,-50%) scale(0);
   transition: transform 0.4s ease;
 }
-
 .hero-social-link:hover {
   transform: scale(1.1);
 }
-
 .hero-social-link:hover::after {
-  transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%,-50%) scale(1);
 }
+.hero-social-link.instagram svg { color: #E4405F; }
+.hero-social-link.youtube svg    { color: #FF0000; }
+.hero-social-link.whatsapp svg   { color: #25D366; }
 
-/* Brand colors for the icons themselves */
-.hero-social-link.instagram svg {
-  color: #E4405F;
-}
-
-.hero-social-link.whatsapp svg {
-  color: #25D366;
-}
-
-/* ----- ICEF Badge row ----- */
+/* ICEF Badge */
 .hero-badge {
   margin-top: 1rem;
   display: flex;
   justify-content: center;
 }
-
 #iasBadge {
   width: 84px;
   height: 104px;
@@ -130,87 +115,145 @@
   align-items: center;
   justify-content: center;
 }
-
-/* Ensure injected badge graphic fits */
 #iasBadge img,
 #iasBadge svg {
   max-width: 62px;
   max-height: 102px;
 }
 
-/* ----- About ----- */
+/* ----- О нас ----- */
 .about {
-  padding: 4rem 1rem;
+  padding: 2rem 1rem;
   text-align: center;
 }
-
-.section-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: clamp(1.5rem, 4vw, 2.25rem);
-  color: var(--primary-blue);
-  margin-bottom: 1rem;
+.about .section-title {
+  font-weight: 700;
+  font-size: clamp(1.5rem,4vw,2.25rem);
+  margin-bottom: 0.75rem;
 }
-
-.section-text {
+.about .section-text {
   font-size: 1rem;
   line-height: 1.6;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto 1.5rem;
+}
+.about .icef-link {
+  color: var(--link-blue);
+  text-decoration: underline;
+}
+.about-subtitle {
+  font-weight: 600;
+  font-size: clamp(1.25rem,3vw,1.75rem);
+  margin-bottom: 1rem;
+}
+/* ----- Carousel ----- */
+.about-carousel-wrapper {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.about-carousel {
+  display: flex;
+  gap: 1rem;
+  overflow: hidden;
+}
+
+.carousel-card {
+  flex: 0 0 calc((100% - 2rem)/3);
+  max-width: calc((100% - 2rem)/3);
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.carousel-card img {
+  width: 100%;
+  height: 180px;        /* фиксированная высота */
+  object-fit: cover;    /* обрезает/масштабирует по размеру */
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+  flex-shrink: 0;
+}
+
+.carousel-card-text {
+  font-size: 0.9rem;
+  color: var(--primary-blue);
+  margin: 0;
+  flex: 1;              /* заполняет оставшееся пространство */
+}
+
+/* arrows */
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.7);
+  border: none;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 1;
+  border-radius: 50%;
+}
+.carousel-arrow.left { left: 0.5rem; }
+.carousel-arrow.right { right: 0.5rem; }
+
+/* Узнать больше under О нас */
+.about-btn-container {
+  text-align: center;
+}
+.section-btn {
+  display: inline-block;
+  background: var(--btn-blue);
+  color: var(--text-white);
+  border: 2px solid var(--text-white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+.section-btn:hover {
+  background: var(--btn-hover);
 }
 
 /* ----- Services ----- */
 .services {
   padding: 4rem 1rem;
 }
-
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
   gap: 1.5rem;
 }
-
 .services-card {
-  background: var(--bg-white);
+  background: var(--text-white);
   padding: 1.5rem;
   border-radius: 0.5rem;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 .services-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
-
 .services-card-title {
   font-size: 1.25rem;
   color: var(--primary-blue);
   margin-bottom: 0.5rem;
 }
-
 .services-card-text {
   font-size: 1rem;
+  color: var(--primary-blue);
 }
 
-/* ----- Mobile tweaks ----- */
+/* Mobile tweaks */
 @media (max-width: 768px) {
-  .hero {
-    height: 60vh;
-  }
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Brand colors for the icons themselves */
-.hero-social-link.instagram svg {
-  color: #E4405F;
-}
-
-.hero-social-link.whatsapp svg {
-  color: #25D366;
-}
-
-.hero-social-link.youtube svg {
-  color: #FF0000;  /* YouTube red */
+  .hero { height: 70vh; }
+  .services-grid { grid-template-columns: 1fr; }
+  .carousel-card { flex: 0 0 100%; }
+  .carousel-arrow { display: none; }
 }
