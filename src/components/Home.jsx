@@ -5,8 +5,8 @@ import { FaInstagram, FaWhatsapp, FaYoutube } from 'react-icons/fa';
 import '../styles/Home.css';
 import studentImg from '../assets/students.jpeg';
 import visaImg from '../assets/visa.jpg';
-import vusaStudent from '../assets/1.png'
-import studentPicture from '../assets/Customer3.jpeg'
+import vusaStudent from '../assets/1.png';
+import studentPicture from '../assets/Customer3.jpeg';
 
 export default function Home() {
   const services = [
@@ -28,12 +28,12 @@ export default function Home() {
   ];
 
   const offerings = [
-    { img: vusaStudent, text: 'Подаём документы в неограниченное количество вузов' },
-    { img: visaImg, text: 'Подбор вариантов по индивидуальному запросу' },
-    { img: studentPicture, text: 'Полное сопровождение в процессе поступления' },
-    { img: visaImg, text: 'Тщательная подготовка к визовому интервью' },
-    { img: visaImg, text: 'Инструкции и гайды после получения визы' },
-    { img: visaImg, text: 'Предоставляем помещение для сдачи теста' }
+    { img: vusaStudent,     text: 'Подаём документы в неограниченное количество вузов' },
+    { img: visaImg,          text: 'Подбор вариантов по индивидуальному запросу' },
+    { img: studentPicture,   text: 'Полное сопровождение в процессе поступления' },
+    { img: visaImg,          text: 'Тщательная подготовка к визовому интервью' },
+    { img: visaImg,          text: 'Инструкции и гайды после получения визы' },
+    { img: visaImg,          text: 'Предоставляем помещение для сдачи теста' }
   ];
 
   const [current, setCurrent] = useState(0);
@@ -45,13 +45,10 @@ export default function Home() {
     return () => clearInterval(timer);
   }, [offerings.length]);
 
-  const prevSlide = () => {
-    setCurrent(prev => (prev - 1 + offerings.length) % offerings.length);
-  };
-  const nextSlide = () => {
-    setCurrent(prev => (prev + 1) % offerings.length);
-  };
+  const prevSlide = () => setCurrent(prev => (prev - 1 + offerings.length) % offerings.length);
+  const nextSlide = () => setCurrent(prev => (prev + 1) % offerings.length);
 
+  // pick 3 items starting from current
   const visibleItems = [0,1,2].map(i => offerings[(current + i) % offerings.length]);
 
   return (
@@ -67,7 +64,7 @@ export default function Home() {
           <Link to="/usinfo" className="section-btn">Узнать больше</Link>
           <div className="hero-social">
             <a className="hero-social-link instagram" href="https://www.instagram.com/edus.kg" target="_blank" rel="noopener noreferrer"><FaInstagram size={32}/></a>
-            <a className="hero-social-link youtube" href="https://www.youtube.com/@edus-d6q" target="_blank" rel="noopener noreferrer"><FaYoutube size={32}/></a>
+            <a className="hero-social-link youtube"   href="https://www.youtube.com/@edus-d6q" target="_blank" rel="noopener noreferrer"><FaYoutube size={32}/></a>
             <a className="hero-social-link whatsapp" href="https://wa.me/996507221215" target="_blank" rel="noopener noreferrer"><FaWhatsapp size={32}/></a>
           </div>
           <div className="hero-badge">
@@ -90,13 +87,13 @@ export default function Home() {
 
         <h3 className="about-subtitle">Что мы предлагаем</h3>
         <div className="about-carousel-wrapper">
-          <button className="carousel-arrow left" onClick={prevSlide}>&#10094;</button>
+          <button className="carousel-arrow left"  onClick={prevSlide}>&#10094;</button>
           <div className="about-carousel">
             {visibleItems.map((item, idx) => (
-              <div key={idx} className="carousel-card">
+              <Link key={idx} to="/our-services" className="carousel-card">
                 <img src={item.img} alt={item.text} />
                 <p className="carousel-card-text">{item.text}</p>
-              </div>
+              </Link>
             ))}
           </div>
           <button className="carousel-arrow right" onClick={nextSlide}>&#10095;</button>
@@ -120,5 +117,5 @@ export default function Home() {
         </div>
       </section>
     </main>
-);
+  );
 }
