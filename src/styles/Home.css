@@ -1,3 +1,4 @@
+/* src/styles/Home.css */
 :root {
   --primary-blue: #2563eb;
   --accent-blue: #3b82f6;
@@ -115,6 +116,28 @@
   color: #25D366;
 }
 
+/* ----- ICEF Badge row ----- */
+.hero-badge {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+#iasBadge {
+  width: 84px;
+  height: 104px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure injected badge graphic fits */
+#iasBadge img,
+#iasBadge svg {
+  max-width: 62px;
+  max-height: 102px;
+}
+
 /* ----- About ----- */
 .about {
   padding: 4rem 1rem;
@@ -177,4 +200,17 @@
   .services-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Brand colors for the icons themselves */
+.hero-social-link.instagram svg {
+  color: #E4405F;
+}
+
+.hero-social-link.whatsapp svg {
+  color: #25D366;
+}
+
+.hero-social-link.youtube svg {
+  color: #FF0000;  /* YouTube red */
 }

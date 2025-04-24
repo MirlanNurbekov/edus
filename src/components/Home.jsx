@@ -1,7 +1,7 @@
 // src/components/Home.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { FaInstagram, FaWhatsapp, FaYoutube } from 'react-icons/fa';
 import '../styles/Home.css';
 import studentImg from '../assets/students.jpeg';
 
@@ -54,6 +54,15 @@ export default function Home() {
               <FaInstagram size={32} />
             </a>
             <a
+              className="hero-social-link youtube"
+              href="https://www.youtube.com/@edus-d6q"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="EdUS на YouTube"
+            >
+               <FaYoutube size={32} />
+            </a>
+            <a
               className="hero-social-link whatsapp"
               href="https://wa.me/996507221215"
               target="_blank"
@@ -62,6 +71,20 @@ export default function Home() {
             >
               <FaWhatsapp size={32} />
             </a>
+          </div>
+
+          {/* Новая строка с ICEF-бейджем */}
+          <div className="hero-badge">
+            <span
+              id="iasBadge"
+              data-account-id="6491"
+            ></span>
+            <script
+              async
+              defer
+              crossorigin="anonymous"
+              src="https://www-cdn.icef.com/scripts/iasbadgeid.js"
+            ></script>
           </div>
         </div>
       </section>
@@ -87,5 +110,5 @@ export default function Home() {
         </div>
       </section>
     </main>
-);
+  );
 }
