@@ -75,9 +75,9 @@ export default function Home() {
       <section className="hero" style={{ backgroundImage: `url(${studentImg})` }}>
         <div className="hero-overlay" />
         <div className="hero-content">
-          <h1 className="hero-title">Откройте мир возможностей в международном образовании с EdUS.</h1>
+          <h1 className="hero-title">Mеждународноe образованиe с EdUS</h1>
           <p className="hero-subtitle">
-            Полное сопровождение: от подбора программ до оформления туристической визы.
+            Oт подбора программ до оформления туристической визы
           </p>
           <div className="hero-social">
             <a className="hero-social-link instagram"
