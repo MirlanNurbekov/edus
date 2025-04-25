@@ -17,7 +17,7 @@ export default function Contacts() {
         <p className="section-text">
           Для вашего удобства —&nbsp;
           <a
-            href="https://2gis.kg/bishkek/geo/70000001095170045/74.612472,42.870582"
+            href="https://2gis.kg/bishkek/geo/70000001091372703"
             target="_blank"
             rel="noopener noreferrer"
             className="link-blue"
@@ -26,15 +26,13 @@ export default function Contacts() {
           </a>
         </p>
 
-        {/* ← Embedded Google Map */}
         <div className="map-container">
-          <iframe
-            title="EdUS Office Location"
-            src="https://maps.google.com/maps?q=42.870582,74.612472&z=16&output=embed"
-            frameBorder="0"
-            allowFullScreen
-            loading="lazy"
-          ></iframe>
+          {/* 2GIS Static Map with a marker at 42.870582,74.612472 */}
+          <img
+            src="https://static.maps.2gis.com/1.0?s=800x400&c=42.870582,74.612472&z=16&pt=42.870582,74.612472"
+            alt="EdUS Office Location"
+            style={{ width: '100%', height: 'auto', borderRadius: '0.5rem' }}
+          />
         </div>
 
         <p className="section-text">

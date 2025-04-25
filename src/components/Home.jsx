@@ -75,9 +75,9 @@ export default function Home() {
       <section className="hero" style={{ backgroundImage: `url(${studentImg})` }}>
         <div className="hero-overlay" />
         <div className="hero-content">
-          <h1 className="hero-title">Добро пожаловать в EdUS</h1>
+          <h1 className="hero-title">Откройте мир возможностей в международном образовании с EdUS.</h1>
           <p className="hero-subtitle">
-            Сопровождаем студентов на пути к зарубежному образованию и оформлению туристических виз.
+            Полное сопровождение: от подбора программ до оформления туристической визы.
           </p>
           <div className="hero-social">
             <a className="hero-social-link instagram"
@@ -98,14 +98,6 @@ export default function Home() {
                rel="noopener noreferrer">
               <FaWhatsapp size={32}/>
             </a>
-          </div>
-          <div className="hero-badge">
-            <span id="iasBadge" data-account-id="6491"></span>
-            <script
-              async defer
-              crossOrigin="anonymous"
-              src="https://www-cdn.icef.com/scripts/iasbadgeid.js"
-            ></script>
           </div>
         </div>
       </section>
