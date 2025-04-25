@@ -8,6 +8,7 @@ import USinfo from './pages/USinfo';
 import AboutUs from './pages/AboutUs';
 import OurServices from './pages/OurServices';
 import Customers from './pages/Customers';
+import Enrollment from './pages/Enrollment';
 import Footer from './components/Footer';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/our-services" element={<OurServices />} />
         <Route path="/customers" element={<Customers />} />
+        <Route path="/enrollment" element={<Enrollment />} />
       </Routes>
       <Footer />
     </Router>

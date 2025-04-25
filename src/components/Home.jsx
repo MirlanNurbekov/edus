@@ -2,18 +2,21 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaInstagram, FaWhatsapp, FaYoutube } from 'react-icons/fa';
-import '../styles/Home.css';
+import '../styles/Page.css';
 import studentImg from '../assets/students.jpeg';
 import visaImg from '../assets/visa.jpg';
 import vusaStudent from '../assets/1.png';
 import studentPicture from '../assets/Customer3.jpeg';
+import vusaStudent2 from '../assets/2.PNG'
+import picture3 from '../assets/3.PNG'
+import picture4 from '../assets/4.PNG'
 
 export default function Home() {
   const services = [
     {
       title: 'Консультация по визам',
       text: 'Экспертная помощь в сборе документов и заполнении анкет.',
-      path: '/consultation'
+      path: '/enrollment'
     },
     {
       title: 'Поступление в ВУЗ',
@@ -23,17 +26,17 @@ export default function Home() {
     {
       title: 'Подготовка к интервью',
       text: 'Индивидуальная подготовка к интервью в Посольстве США.',
-      path: '/preparation'
+      path: '/enrollment'
     }
   ];
 
   const offerings = [
     { img: vusaStudent,     text: 'Подаём документы в неограниченное количество вузов' },
-    { img: visaImg,          text: 'Подбор вариантов по индивидуальному запросу' },
+    { img: picture4,         text: 'Подбор вариантов по индивидуальному запросу' },
     { img: studentPicture,   text: 'Полное сопровождение в процессе поступления' },
     { img: visaImg,          text: 'Тщательная подготовка к визовому интервью' },
-    { img: visaImg,          text: 'Инструкции и гайды после получения визы' },
-    { img: visaImg,          text: 'Предоставляем помещение для сдачи теста' }
+    { img: picture3,          text: 'Инструкции и гайды после получения визы' },
+    { img: vusaStudent2,     text: 'Предоставляем помещение для сдачи теста' }
   ];
 
   const [current, setCurrent] = useState(0);
@@ -103,13 +106,12 @@ export default function Home() {
           <Link to="/about-us" className="section-btn">Узнать больше</Link>
         </div>
       </section>
-
-      {/* Services */}
-      <section id="services" className="services">
+  {/* Services */}
+  <section id="services" className="services">
         <h2 className="section-title">Наши услуги</h2>
         <div className="services-grid">
-          {services.map(({ title, text, path }) => (
-            <Link key={title} to={path} className="services-card">
+          {services.map(({ title, text, path }, i) => (
+            <Link key={i} to={path} className="services-card">
               <h3 className="services-card-title">{title}</h3>
               <p className="services-card-text">{text}</p>
             </Link>
