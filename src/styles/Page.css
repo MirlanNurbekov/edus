@@ -1,58 +1,71 @@
 /* src/styles/Page.css */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
+/* =======================
+   Variables
+   ======================= */
 :root {
-  --primary-blue: #0F1954;
-  --btn-blue:     #1e3a8a;
-  --btn-hover:    #3B82F6;
-  --text-white:   #ffffff;
-  --font-sans:    'Poppins', sans-serif;
-  --link-blue:    #9fc5e8;
+  --primary-blue:  #0F1954;
+  --btn-blue:      #1e3a8a;
+  --btn-hover:     #3B82F6;
+  --text-white:    #ffffff;
+  --text-dark:     #1f2937;
+  --font-sans:     'Poppins', sans-serif;
+  --link-blue:     #9fc5e8;
 }
 
+/* =======================
+   Base Styles
+   ======================= */
 html, body {
   margin: 0;
   padding: 0;
   background: #0F1954;
-}
-
-.home {
   font-family: var(--font-sans);
-  background: #0F1954;
-  padding-top: 56px;
   color: var(--text-white);
 }
 
-/* ----- Hero ----- */
+.home {
+  padding-top: 56px; /* space for fixed navbar */
+}
+
+/* =======================
+   Hero Section
+   ======================= */
 .hero {
   position: relative;
+  height: 95vh;
   background-size: cover;
   background-position: center;
-  height: 95vh;
 }
+
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.3);
 }
+
 .hero-content {
   position: relative;
   z-index: 2;
-  text-align: center;
-  padding: 2rem 1rem;
   max-width: 600px;
   margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: center;
 }
+
 .hero-title {
   font-weight: 700;
   font-size: clamp(2rem, 5vw, 3rem);
   margin-bottom: 1rem;
 }
+
 .hero-subtitle {
   font-weight: 400;
   font-size: clamp(1rem, 3vw, 1.25rem);
   margin-bottom: 1.5rem;
 }
+
 .hero-btn {
   display: inline-block;
   background: var(--btn-blue);
@@ -63,17 +76,19 @@ html, body {
   text-decoration: none;
   transition: background 0.2s;
 }
+
 .hero-btn:hover {
   background: var(--btn-hover);
 }
 
-/* ----- Social icons ----- */
+/* ----- Social Icons ----- */
 .hero-social {
   margin-top: 1rem;
   display: flex;
   justify-content: center;
   gap: 2rem;
 }
+
 .hero-social-link {
   position: relative;
   width: 64px;
@@ -85,6 +100,7 @@ html, body {
   justify-content: center;
   transition: transform 0.3s;
 }
+
 .hero-social-link::after {
   content: '';
   position: absolute;
@@ -97,22 +113,26 @@ html, body {
   transform: translate(-50%, -50%) scale(0);
   transition: transform 0.4s;
 }
+
 .hero-social-link:hover {
   transform: scale(1.1);
 }
+
 .hero-social-link:hover::after {
   transform: translate(-50%, -50%) scale(1);
 }
+
 .hero-social-link.instagram svg { color: #E4405F; }
 .hero-social-link.youtube svg    { color: #FF0000; }
 .hero-social-link.whatsapp svg   { color: #25D366; }
 
-/* ----- ICEF Badge ----- */
+/* ----- ICEF Badge (Hero) ----- */
 .hero-badge {
   margin-top: 1rem;
   display: flex;
   justify-content: center;
 }
+
 #iasBadge {
   width: 84px;
   height: 104px;
@@ -120,34 +140,41 @@ html, body {
   align-items: center;
   justify-content: center;
 }
+
 #iasBadge img,
 #iasBadge svg {
   max-width: 62px;
   max-height: 102px;
 }
 
-/* ----- О нас (shared) ----- */
+/* =======================
+   Shared “About” Styles
+   ======================= */
 .about {
   padding: 2rem 1rem;
   text-align: center;
 }
+
 .section-title {
   font-weight: 700;
   font-size: clamp(1.5rem, 4vw, 2.25rem);
   margin-bottom: 0.75rem;
   color: var(--text-white);
 }
+
 .section-text {
-  font-size: 1rem;
-  line-height: 1.6;
   max-width: 800px;
   margin: 0 auto 1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
   color: var(--text-white);
 }
+
 .icef-link {
   color: var(--link-blue);
   text-decoration: underline;
 }
+
 .about-subtitle {
   font-weight: 600;
   font-size: clamp(1.25rem, 3vw, 1.75rem);
@@ -155,50 +182,70 @@ html, body {
   color: var(--text-white);
 }
 
-/* ----- Carousel ----- */
+/* ----- ICEF Badge (About) ----- */
+.about-badge {
+  text-align: center;
+  margin: 1rem 0 2rem;
+}
+
+.about-badge #iasBadge {
+  width: 60px;
+  height: 80px;
+}
+
+.about-badge #iasBadge img,
+.about-badge #iasBadge svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* =======================
+   Carousel (Home)
+   ======================= */
 .about-carousel-wrapper {
   position: relative;
   margin-bottom: 1.5rem;
 }
+
 .about-carousel {
   display: flex;
   gap: 1rem;
   overflow: hidden;
 }
+
 .carousel-card {
-  flex: 0 0 calc((100% - 2rem)/3);
-  max-width: calc((100% - 2rem)/3);
-  display: flex;
-  flex-direction: column;
-  background: #ffffff;
+  flex: 0 0 calc((100% - 2rem) / 3);
+  max-width: calc((100% - 2rem) / 3);
+  background: var(--text-white);
   border-radius: 0.5rem;
   padding: 0.75rem;
   text-align: left;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
 }
+
 .carousel-card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
   border-radius: 0.25rem;
   margin-bottom: 0.5rem;
-  flex-shrink: 0;
 }
+
 .carousel-card-text {
-  font-family: var(--font-sans);
   font-weight: 700;
-  color: #000000;
   font-size: 0.9rem;
-  margin: 0;
+  color: #000;
   flex: 1;
 }
 
-/* ----- Carousel arrows ----- */
+/* Carousel arrows */
 .carousel-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255,255,255,0.7);
+  background: rgba(255, 255, 255, 0.7);
   border: none;
   font-size: 1.5rem;
   padding: 0.5rem;
@@ -206,13 +253,18 @@ html, body {
   z-index: 1;
   border-radius: 50%;
 }
+
 .carousel-arrow.left  { left: 0.5rem; }
 .carousel-arrow.right { right: 0.5rem; }
 
-/* ----- Узнать больше under О нас ----- */
-.about-btn-container {
+/* =======================
+   Buttons
+   ======================= */
+.about-btn-container,
+.services-video {
   text-align: center;
 }
+
 .section-btn {
   display: inline-block;
   background: var(--btn-blue);
@@ -224,21 +276,26 @@ html, body {
   text-decoration: none;
   transition: background-color 0.2s;
 }
+
 .section-btn:hover {
   background: var(--btn-hover);
 }
 
-/* ----- Services ----- */
+/* =======================
+   Services Section
+   ======================= */
 .services {
   padding: 3rem 1rem;
   text-align: center;
 }
+
 .services-grid {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 1.5rem;
 }
+
 .services-card {
   flex: 0 0 250px;
   max-width: 250px;
@@ -247,54 +304,65 @@ html, body {
   border-radius: 0.5rem;
   box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   transition: transform 0.2s, box-shadow 0.2s;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
+
 .services-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
-.services-card-title,
-.services-card-text {
-  text-align: center;
+
+.services-card-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
 }
+
+.services-card-icon {
+  margin: 0.5rem 0;
+  color: var(--primary-blue);
+}
+
 .services-card-title {
   font-size: 1.25rem;
   color: var(--primary-blue);
   margin-bottom: 0.5rem;
 }
+
 .services-card-text {
   font-size: 1rem;
-  font-weight: 400;
-  color: var(--text-dark, #1f2937);
+  color: var(--text-dark);
+  flex: 1;
+  margin-bottom: 1rem;
 }
 
-/* ----- Mobile tweaks ----- */
-@media (max-width: 768px) {
-  .hero {
-    height: 70vh;
-  }
-  .services-grid {
-    justify-content: center;
-  }
-  .carousel-card {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-  .carousel-arrow {
-    display: block;
-  }
+/* Video embed */
+.services-video iframe {
+  width: 100%;
+  max-width: 940px;
+  aspect-ratio: 16/9;
+  border-radius: 0.5rem;
+  margin-top: 1.5rem;
 }
 
-/* ===== AboutUs page layout with icons ===== */
+/* =======================
+   AboutUs Page Layout
+   ======================= */
 .about-page {
   padding-top: 2rem;
+  margin-left: 3rem;
 }
 
 .about-page-content {
   display: flex;
-  align-items: flex-start;
+  flex-wrap: wrap;
   gap: 2rem;
   margin-top: 1.5rem;
-  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .about-page-text-icons {
@@ -315,61 +383,39 @@ html, body {
   flex-shrink: 0;
   color: var(--text-white);
   margin-top: 4px;
-  margin-left: 44px;
 }
 
-/* boss image styling */
+/* Boss image styling */
 .about-page-image {
   flex: 0 0 350px;
   max-width: 350px;
 }
+
 .about-page-image img {
   width: 100%;
   height: auto;
   border-radius: 0.5rem;
 }
 
-/* Mobile: stack text then image */
+/* =======================
+   Responsive
+   ======================= */
 @media (max-width: 768px) {
-  .about-page-content {
-    flex-direction: column;
-    align-items: center;
-  }
-  .about-page-image {
-    order: 2;
-    width: 100%;
-    max-width: 100%;
-    margin-top: 1rem;
-  }
-  .about-page-text-icons {
-    order: 1;
-    width: 100%;
-  }
+  .hero { height: 70vh; }
+  .carousel-card { flex: 0 0 100%; max-width: 100%; }
+  .carousel-arrow { display: block; }
+  .services-card { flex: 0 0 100%; max-width: 100%; }
+  .about-page-content { flex-direction: column; align-items: center; }
+  .about-page-image { order: 2; width: 100%; margin-top: 1rem; }
+  .about-page-text-icons { order: 1; width: 100%; }
+}
+/* Static badge under О нас */
+.about-badge {
+  text-align: center;
+  margin: 1rem 0;
 }
 
-/* ===== OurServices image & video tweaks ===== */
-.services-card-image {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-.services-video {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center;
-}
-
-.services-video iframe {
-  width: 100%;
-  max-width: 800px;
-  aspect-ratio: 16 / 9;
-  border-radius: 0.5rem;
-}
-
-/* tighten up the icon margin inside the card */
-.services-card-icon {
-  margin: 0.5rem 0;
-  display: block;
+.about-badge-image {
+  width: 100px;
+  height: auto;
 }
