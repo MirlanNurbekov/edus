@@ -21,29 +21,29 @@ import serviceImg3     from '../assets/bosstalk.jpeg';
 import badgeImg        from '../assets/badge.png';
 
 export default function Home() {
-  // Our services data now includes image
+  // Our services data (unchanged)
   const services = [
     {
       title: 'Консультация по визам',
       text:  'Экспертная помощь в сборе документов и заполнении анкет.',
-      path:  '/our-services',
+      url:   'https://www.instagram.com/reel/DHfm2_UoJpr/?igsh=ZDdwaXhwdGVxaWVl',
       image: serviceImg1,
     },
     {
       title: 'Поступление в ВУЗ',
       text:  'Подбор университетов, помощь в оформлении и сопровождении.',
-      path:  '/our-services',
+      url:   'https://www.instagram.com/reel/DD6Hx6Voo3D/?igsh=MW11a2Z1bHM1c3Z5eg==',
       image: serviceImg2,
     },
     {
       title: 'Подготовка к интервью',
       text:  'Индивидуальная подготовка к интервью в Посольстве США.',
-      path:  '/our-services',
+      url:   'https://www.instagram.com/reel/DIgCI34oQ4A/?igsh=MWMwNjZtdHp2aHJ3bw==',
       image: serviceImg3,
     }
   ];
 
-  // carousel offerings
+  // carousel offerings (unchanged)
   const offerings = [
     { img: vusaStudent,   text: 'Подаём документы в неограниченное количество вузов' },
     { img: picture4,       text: 'Подбор вариантов по индивидуальному запросу' },
@@ -54,7 +54,6 @@ export default function Home() {
   ];
 
   const [current, setCurrent] = useState(0);
-
   useEffect(() => {
     const timer = setInterval(
       () => setCurrent(prev => (prev + 1) % offerings.length),
@@ -68,7 +67,6 @@ export default function Home() {
   const nextSlide = () =>
     setCurrent(prev => (prev + 1) % offerings.length);
 
-  // pick the 3 visible carousel items
   const visibleItems = [0, 1, 2].map(i => offerings[(current + i) % offerings.length]);
 
   return (
@@ -149,12 +147,23 @@ export default function Home() {
         <div className="about-carousel-wrapper">
           <button className="carousel-arrow left" onClick={prevSlide}>&#10094;</button>
           <div className="about-carousel">
-            {visibleItems.map((item, idx) => (
-              <Link key={idx} to="/our-services" className="carousel-card">
-                <img src={item.img} alt={item.text}/>
-                <p className="carousel-card-text">{item.text}</p>
-              </Link>
-            ))}
+            {visibleItems.map((item, idx) => {
+              // build WhatsApp link with prefilled text:
+              const waMsg = encodeURIComponent(`Здравствуйте! Я заинтересован в услуге: ${item.text}`);
+              const waLink = `https://wa.me/996507221215?text=${waMsg}`;
+              return (
+                <a
+                  key={idx}
+                  href={waLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="carousel-card"
+                >
+                  <img src={item.img} alt={item.text}/>
+                  <p className="carousel-card-text">{item.text}</p>
+                </a>
+              );
+            })}
           </div>
           <button className="carousel-arrow right" onClick={nextSlide}>&#10095;</button>
         </div>
@@ -168,12 +177,18 @@ export default function Home() {
       <section id="services" className="services">
         <h2 className="section-title">Наши услуги</h2>
         <div className="services-grid">
-          {services.map(({ title, text, path, image }, i) => (
-            <Link key={i} to={path} className="services-card">
+          {services.map(({ title, text, url, image }, i) => (
+            <a
+              key={i}
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="services-card"
+            >
               <img src={image} alt={title} className="services-card-image"/>
               <h3 className="services-card-title">{title}</h3>
               <p className="services-card-text">{text}</p>
-            </Link>
+            </a>
           ))}
         </div>
       </section>

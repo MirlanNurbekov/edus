@@ -482,3 +482,115 @@ html, body {
   width: 100%;
   height: 100%;
 }
+/* =======================
+   Students carousel
+   ======================= */
+   .students {
+    padding: 1rem 1rem;
+    background: var(--primary-blue);
+    text-align: center;
+  }
+  
+  .students-carousel-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 1rem auto;
+  }
+  
+  .students-carousel {
+    overflow: hidden;
+  }
+  
+  .student-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--text-white);
+  }
+  
+  .student-photo {
+    width: 350px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+  }
+  
+  .student-review {
+    max-width: 900px;
+    text-align: left;
+    line-height: 1.6;
+  }
+  
+  .student-name {
+    margin-top: 1rem;
+    font-weight: 700;
+  }
+  
+  /* Arrows reuse existing carousel-arrow styles, but ensure visibility on dark bg */
+  .students .carousel-arrow {
+    color: #0F1954;
+    background: rgba(255,255,255,0.8);
+  }
+  
+  /* Dots */
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .dot.active {
+    background: var(--text-white);
+  }
+  
+  /* Mobile tweak: arrows smaller, photo smaller */
+  @media (max-width: 768px) {
+    .student-photo {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 1rem;
+    }
+    .carousel-arrow {
+      display: none;
+    }
+    .students-carousel-wrapper {
+      max-width: 100%;
+    }
+  }
+
+ /* =======================
+   Tourist Visas Carousel
+   ======================= */
+/* Center the visa section heading and give some padding */
+.tourist-visas {
+  padding: 1rem 1rem;
+  text-align: center;
+}
+
+/* Constrain and center the carousel */
+.visas-carousel-wrapper {
+  position: relative;
+  max-width: 700px;
+  margin: 1rem auto;
+}
+
+/* Make each visa image larger, fixed size */
+.visa-photo {
+  width: 100%;
+  max-width: 700px;
+  height: 700px;
+  object-fit: cover;
+  border-radius: 1px;
+  margin: 0 auto;
+}
