@@ -10,6 +10,7 @@ import OurServices from './pages/OurServices';
 import Customers from './pages/Customers';
 import Enrollment from './pages/Enrollment';
 import Footer from './components/Footer';
+import Contact from './pages/Contacts';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/our-services" element={<OurServices />} />
         <Route path="/customers" element={<Customers />} />
         <Route path="/enrollment" element={<Enrollment />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </Router>

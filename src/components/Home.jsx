@@ -13,7 +13,7 @@ import picture3        from '../assets/3.PNG';
 import picture4        from '../assets/4.PNG';
 
 // service images for the "Наши услуги" cards
-import serviceImg1     from '../assets/Customer1.jpeg';
+import serviceImg1     from '../assets/visa.jpg';
 import serviceImg2     from '../assets/Customer2.jpeg';
 import serviceImg3     from '../assets/bosstalk.jpeg';
 
@@ -81,7 +81,6 @@ export default function Home() {
           <p className="hero-subtitle">
             Сопровождаем студентов на пути к зарубежному образованию и оформлению туристических виз.
           </p>
-          <Link to="/usinfo" className="section-btn">Узнать больше</Link>
           <div className="hero-social">
             <a className="hero-social-link instagram"
                href="https://www.instagram.com/edus.kg"

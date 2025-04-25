@@ -39,7 +39,7 @@ export default function Navbar() {
           <Link to="/about-us" onClick={() => setOpen(false)}>О нас</Link>
           <Link to="/our-services" onClick={() => setOpen(false)}>Наши услуги</Link>
           <Link to="/customers" onClick={() => setOpen(false)}>Наши клиенты</Link>
-
+          <Link to="/contact" onClick={() => setOpen(false)}>Контакты</Link>
           {/* Divider */}
           <div className="navbar-divider" />
 
