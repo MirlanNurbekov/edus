@@ -609,3 +609,11 @@ html, body {
   border-radius: 1px;
   margin: 0 auto;
 }
+
+/* Error page icon styling */
+.error-icon {
+  text-align: center;
+  font-size: 5rem;       /* adjust size as needed */
+  color: #ffffff;        /* a warning-red tint */
+  margin: 1rem 0 1rem;   /* space above/below */
+}
