@@ -81,7 +81,7 @@ export default function Students() {
   return (
     <main className="home">
       {/* Students Carousel */}
-      <section className="students">
+      <section className="contacts">
         <h2 className="section-title">Наша гордость — это наши студенты</h2>
 
         <div className="students-carousel-wrapper">
