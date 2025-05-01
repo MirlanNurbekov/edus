@@ -1,6 +1,8 @@
-// src/App.jsx
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+// 1) Make sure this path points to where you put LanguageContext.js:
+import { LanguageProvider } from './context/LanguageContext';
 
 import Navbar from './components/Navbar';
 import Home from './components/Home';
@@ -14,11 +16,10 @@ import Error from './components/Error';
 import Footer from './components/Footer';
 
 function App() {
-  // Disable right-click and common DevTools shortcuts
+  // block right-click & devtools keys
   useEffect(() => {
     const handleContextMenu = (e) => e.preventDefault();
     const handleKeyDown = (e) => {
-      // Block F12, Ctrl+Shift+I/J/C, Ctrl+U
       if (
         e.key === 'F12' ||
         (e.ctrlKey && e.shiftKey && ['I','J','C','i','j','c'].includes(e.key)) ||
@@ -36,21 +37,25 @@ function App() {
   }, []);
 
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/usinfo" element={<USinfo />} />
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/our-services" element={<OurServices />} />
-        <Route path="/customers" element={<Customers />} />
-        <Route path="/enrollment" element={<Enrollment />} />
-        <Route path="/contact" element={<Contact />} />
-        {/* Catch-all for 404s */}
-        <Route path="*" element={<Error />} />
-      </Routes>
-      <Footer />
-    </Router>
+    // 2) Wrap *everything* in LanguageProvider
+    <LanguageProvider>
+      <Router>
+        <Navbar />
+
+        <Routes>
+          <Route path="/"            element={<Home />} />
+          <Route path="/usinfo"      element={<USinfo />} />
+          <Route path="/about-us"    element={<AboutUs />} />
+          <Route path="/our-services" element={<OurServices />} />
+          <Route path="/customers"   element={<Customers />} />
+          <Route path="/enrollment"  element={<Enrollment />} />
+          <Route path="/contact"     element={<Contact />} />
+          <Route path="*"            element={<Error />} />
+        </Routes>
+
+        <Footer />
+      </Router>
+    </LanguageProvider>
   );
 }
 

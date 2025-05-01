@@ -1,5 +1,4 @@
-// src/components/Home.jsx
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FaInstagram, FaWhatsapp, FaYoutube } from 'react-icons/fa';
 import '../styles/Page.css';
@@ -12,45 +11,41 @@ import vusaStudent2    from '../assets/2.PNG';
 import picture3        from '../assets/3.PNG';
 import picture4        from '../assets/4.PNG';
 
-// service images for the "Наши услуги" cards
 import serviceImg1     from '../assets/visa.jpg';
 import serviceImg2     from '../assets/Customer2.jpeg';
 import serviceImg3     from '../assets/bosstalk.jpeg';
-
-// static badge image
 import badgeImg        from '../assets/badge.png';
 
+// pull in our LanguageContext
+import { LanguageContext } from '../context/LanguageContext';
+
 export default function Home() {
-  // Our services data (unchanged)
+  const { t } = useContext(LanguageContext);
+
+  // just URLs & images here—titles/text come from t.services[]
   const services = [
     {
-      title: 'Консультация по визам',
-      text:  'Экспертная помощь в сборе документов и заполнении анкет.',
-      url:   'https://www.instagram.com/reel/DHfm2_UoJpr/?igsh=ZDdwaXhwdGVxaWVl',
+      url: 'https://www.instagram.com/reel/DHfm2_UoJpr/?igsh=ZDdwaXhwdGVxaWVl',
       image: serviceImg1,
     },
     {
-      title: 'Поступление в ВУЗ',
-      text:  'Подбор университетов, помощь в оформлении и сопровождении.',
-      url:   'https://www.instagram.com/reel/DD6Hx6Voo3D/?igsh=MW11a2Z1bHM1c3Z5eg==',
+      url: 'https://www.instagram.com/reel/DD6Hx6Voo3D/?igsh=MW11a2Z1bHM1c3Z5eg==',
       image: serviceImg2,
     },
     {
-      title: 'Подготовка к интервью',
-      text:  'Индивидуальная подготовка к интервью в Посольстве США.',
-      url:   'https://www.instagram.com/reel/DIgCI34oQ4A/?igsh=MWMwNjZtdHp2aHJ3bw==',
+      url: 'https://www.instagram.com/reel/DIgCI34oQ4A/?igsh=MWMwNjZtdHp2aHJ3bw==',
       image: serviceImg3,
     }
   ];
 
-  // carousel offerings (unchanged)
+  // carousel images only—text comes from t.offerings[]
   const offerings = [
-    { img: vusaStudent,   text: 'Подаём документы в неограниченное количество вузов' },
-    { img: picture4,       text: 'Подбор вариантов по индивидуальному запросу' },
-    { img: studentPicture, text: 'Полное сопровождение в процессе поступления' },
-    { img: visaImg,        text: 'Тщательная подготовка к визовому интервью' },
-    { img: picture3,       text: 'Инструкции и гайды после получения визы' },
-    { img: vusaStudent2,   text: 'Предоставляем помещение для сдачи теста' },
+    { img: vusaStudent },
+    { img: picture4 },
+    { img: studentPicture },
+    { img: visaImg },
+    { img: picture3 },
+    { img: vusaStudent2 },
   ];
 
   const [current, setCurrent] = useState(0);
@@ -75,10 +70,8 @@ export default function Home() {
       <section className="hero" style={{ backgroundImage: `url(${studentImg})` }}>
         <div className="hero-overlay" />
         <div className="hero-content">
-          <h1 className="hero-title">Mеждународноe образованиe с EdUS</h1>
-          <p className="hero-subtitle">
-            Oт подбора программ до оформления туристической визы
-          </p>
+          <h1 className="hero-title">{t.hero_title}</h1>
+          <p className="hero-subtitle">{t.hero_subtitle}</p>
           <div className="hero-social">
             <a className="hero-social-link instagram"
                href="https://www.instagram.com/edus.kg"
@@ -104,21 +97,20 @@ export default function Home() {
 
       {/* About / Carousel */}
       <section id="about" className="about">
-        <h2 className="section-title">О нас</h2>
+        <h2 className="section-title">{t.about_title}</h2>
         <p className="section-text">
-          EdUS — признанная на международном уровне команда профессионалов и официально аккредитованное агентство&nbsp;
+          {t.about_intro}
           <a
             href="https://www.icef.com/agency/0016M00002h1BP3QAM"
             target="_blank"
             rel="noopener noreferrer"
             className="icef-link"
           >
-            ICEF ID No: 6491
-          </a>.
-          Мы сопровождаем абитуриентов на каждом этапе образовательного пути за рубежом, предоставляя персонализированные консультации и экспертную поддержку для поступления в ведущие университеты и колледжи США, а также для оформления туристических виз.
+            {t.about_icef_text}
+          </a>
+          {t.about_outro}
         </p>
 
-        {/* Static ICEF badge */}
         <div className="about-badge">
           <a
             href="https://www.icef.com/agency/0016M00002h1BP3QAM"
@@ -127,21 +119,21 @@ export default function Home() {
           >
             <img
               src={badgeImg}
-              alt="ICEF accredited agency badge"
+              alt={t.badge_alt}
               className="about-badge-image"
             />
           </a>
         </div>
 
-        <Link to="/about-us" className="section-btn">Узнать больше</Link>
+        <Link to="/about-us" className="section-btn">{t.learn_more}</Link>
 
-        <h3 className="about-subtitle">Что мы предлагаем</h3>
+        <h3 className="about-subtitle">{t.offerings_title}</h3>
         <div className="about-carousel-wrapper">
           <button className="carousel-arrow left" onClick={prevSlide}>&#10094;</button>
           <div className="about-carousel">
             {visibleItems.map((item, idx) => {
-              // build WhatsApp link with prefilled text:
-              const waMsg = encodeURIComponent(`Здравствуйте! Я заинтересован в услуге: ${item.text}`);
+              const index = (current + idx) % offerings.length;
+              const waMsg = encodeURIComponent(`${t.whatsapp_intro}${t.offerings[index]}`);
               const waLink = `https://wa.me/996507221215?text=${waMsg}`;
               return (
                 <a
@@ -151,8 +143,8 @@ export default function Home() {
                   rel="noopener noreferrer"
                   className="carousel-card"
                 >
-                  <img src={item.img} alt={item.text}/>
-                  <p className="carousel-card-text">{item.text}</p>
+                  <img src={item.img} alt={t.offerings[index]}/>
+                  <p className="carousel-card-text">{t.offerings[index]}</p>
                 </a>
               );
             })}
@@ -161,15 +153,15 @@ export default function Home() {
         </div>
 
         <div className="about-btn-container">
-          <Link to="/about-us" className="section-btn">Узнать больше</Link>
+          <Link to="/about-us" className="section-btn">{t.learn_more}</Link>
         </div>
       </section>
 
       {/* Services */}
       <section id="services" className="services">
-        <h2 className="section-title">Наши услуги</h2>
+        <h2 className="section-title">{t.services_title}</h2>
         <div className="services-grid">
-          {services.map(({ title, text, url, image }, i) => (
+          {services.map(({ url, image }, i) => (
             <a
               key={i}
               href={url}
@@ -177,9 +169,9 @@ export default function Home() {
               rel="noopener noreferrer"
               className="services-card"
             >
-              <img src={image} alt={title} className="services-card-image"/>
-              <h3 className="services-card-title">{title}</h3>
-              <p className="services-card-text">{text}</p>
+              <img src={image} alt={t.services[i].title} className="services-card-image"/>
+              <h3 className="services-card-title">{t.services[i].title}</h3>
+              <p className="services-card-text">{t.services[i].text}</p>
             </a>
           ))}
         </div>
