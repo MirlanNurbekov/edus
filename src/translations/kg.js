@@ -8,7 +8,7 @@ export default {
 
   // Hero
   hero_title: 'EdUS менен Эл аралык Билим',
-  hero_subtitle: 'Программаларды тандоодон визаларды алууга чейин',
+  hero_subtitle: 'Жакшыраак келечекке болгон эшигиңиз',
 
   // About (Home page)
   about_title: 'Биз жөнүндө',

@@ -8,7 +8,7 @@ export default {
 
   // Hero
   hero_title: 'Mеждународноe образованиe с EdUS',
-  hero_subtitle: 'Oт подбора программ до оформления туристической визы',
+  hero_subtitle: 'Ваши двери в лучшее будущее',
 
   // About (Home page)
   about_title: 'О нас',
@@ -107,7 +107,7 @@ export default {
   ourservices_video_src: 'https://www.youtube.com/embed/PQOh5Jz2D6E?start=122',
   ourservices_video_title: 'Обзор EdUS',
 
-  // Students page
+  // Students page 
   students_title: 'Наша гордость — это наши студенты',
   students_slides: [
     {

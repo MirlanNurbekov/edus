@@ -8,7 +8,7 @@ export default {
 
   // Hero
   hero_title: 'International Education with EdUS',
-  hero_subtitle: 'From program selection to tourist visa processing',
+  hero_subtitle: 'Your gateway to a better future',
 
   // About (Home page)
   about_title: 'About Us',
