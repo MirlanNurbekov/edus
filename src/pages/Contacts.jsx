@@ -53,7 +53,7 @@ export default function Contacts() {
 
         <div className="contacts-social">
           <a
-            href="https://www.instagram.com/edus.kg"
+            href="https://www.instagram.com/edus.visa/?igsh=amwyZzF6ZnpweGM0#"
             target="_blank"
             rel="noopener noreferrer"
             className="contact-icon instagram"

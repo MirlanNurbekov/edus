@@ -29,7 +29,7 @@ export default function Home() {
       image: serviceImg1,
     },
     {
-      url: 'https://www.instagram.com/reel/DD6Hx6Voo3D/?igsh=MW11a2Z1bHM1c3Z5eg==',
+      url: 'https://www.instagram.com/edus.visa/?igsh=amwyZzF6ZnpweGM0#',
       image: serviceImg2,
     },
     {
@@ -74,7 +74,7 @@ export default function Home() {
           <p className="hero-subtitle">{t.hero_subtitle}</p>
           <div className="hero-social">
             <a className="hero-social-link instagram"
-               href="https://www.instagram.com/edus.kg"
+               href="https://www.instagram.com/edus.visa/?igsh=amwyZzF6ZnpweGM0#"
                target="_blank"
                rel="noopener noreferrer">
               <FaInstagram size={32}/>

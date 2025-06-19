@@ -50,7 +50,7 @@ export default function Navbar() {
             <a href="https://www.youtube.com/@edus-d6q" target="_blank" rel="noopener noreferrer" aria-label="EdUS on YouTube">
               <FaYoutube />
             </a>
-            <a href="https://www.instagram.com/edus.kg" target="_blank" rel="noopener noreferrer" aria-label="EdUS on Instagram">
+            <a href="https://www.instagram.com/edus.visa/?igsh=amwyZzF6ZnpweGM0#" target="_blank" rel="noopener noreferrer" aria-label="EdUS on Instagram">
               <FaInstagram />
             </a>
           </div>

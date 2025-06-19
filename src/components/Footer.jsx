@@ -14,7 +14,7 @@ export default function Footer() {
         <span>&copy; {year} EdUS. {t.footer_copy}</span>
         <div className="footer-social">
           <a
-            href="https://www.instagram.com/edus.kg"
+            href="https://www.instagram.com/edus.visa/?igsh=amwyZzF6ZnpweGM0#"
             target="_blank"
             rel="noopener noreferrer"
             aria-label={t.footer_instagram_aria}
